@@ -13,6 +13,7 @@ import { DeployInstanceModalComponent } from 'src/renderer/app/components/modals
 import { DuplicateModalComponent } from 'src/renderer/app/components/modals/duplicate-modal/duplicate-modal.component';
 import { ManageInstancesModalComponent } from 'src/renderer/app/components/modals/manage-instances-modal/manage-instances-modal.component';
 import { SettingsModalComponent } from 'src/renderer/app/components/modals/settings-modal/settings-modal.component';
+import { SystemModalComponent } from 'src/renderer/app/components/modals/system-modal/system-modal.component';
 import { TemplatesModalComponent } from 'src/renderer/app/components/modals/templates-modal/templates-modal.component';
 import { WelcomeModalComponent } from 'src/renderer/app/components/modals/welcome-modal/welcome-modal.component';
 import { FocusableInputs } from 'src/renderer/app/enums/ui.enum';
@@ -50,7 +51,8 @@ type ModalNames =
   | 'auth'
   | 'confirm'
   | 'deploy'
-  | 'manageInstances';
+  | 'manageInstances'
+  | 'systemSetting';
 type ModalWithPayload = Extract<
   ModalNames,
   'deploy' | 'manageInstances' | 'confirm'
@@ -119,6 +121,10 @@ export class UIService {
     manageInstances: {
       component: ManageInstancesModalComponent,
       options: commonConfigs.large
+    },
+    systemSetting: {
+      component: SystemModalComponent,
+      options: commonConfigs.medium
     }
   };
   private modalsInstances: { [key in ModalNames]: NgbModalRef } = {
@@ -131,7 +137,8 @@ export class UIService {
     auth: null,
     confirm: null,
     deploy: null,
-    manageInstances: null
+    manageInstances: null,
+    systemSetting: null
   };
 
   constructor(

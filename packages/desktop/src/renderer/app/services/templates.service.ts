@@ -49,7 +49,7 @@ export class TemplatesService {
    */
   public getTemplatesList(): Observable<TemplateListItem[]> {
     return this.httpClient
-      .get<Template[]>(`${Config.apiURL}templates`)
+      .get<Template[]>(`${Config.apiURL}dummy/templates`)
       .pipe(shareReplay(1));
   }
 
@@ -65,7 +65,7 @@ export class TemplatesService {
       this.templateCache.set(
         cacheKey,
         this.httpClient
-          .get<Template>(`${Config.apiURL}templates/${id}`)
+          .get<Template>(`${Config.apiURL}dummy/templates/${id}`)
           .pipe(shareReplay(1))
       );
     }
@@ -89,7 +89,7 @@ export class TemplatesService {
     return this.userService.getIdToken().pipe(
       switchMap((idToken) =>
         this.httpClient
-          .get<{ data: string }>(`${Config.apiURL}templates/generate`, {
+          .get<{ data: string }>(`${Config.apiURL}dummy/templates/generate`, {
             params: {
               q: prompt,
               type: 'template',
@@ -140,7 +140,7 @@ export class TemplatesService {
     return this.userService.getIdToken().pipe(
       switchMap((idToken) =>
         this.httpClient
-          .get<{ data: Route }>(`${Config.apiURL}templates/generate`, {
+          .get<{ data: Route }>(`${Config.apiURL}dummy/templates/generate`, {
             params: {
               q: prompt,
               type: 'endpoint',

@@ -81,7 +81,7 @@ export class UserService extends Logger {
   public getUserInfo() {
     return from(this.auth.currentUser.getIdToken()).pipe(
       switchMap((token) =>
-        this.httpClient.get(`${Config.apiURL}user`, {
+        this.httpClient.get(`${Config.apiURL}dummy/user`, {
           headers: { Authorization: `Bearer ${token}` }
         })
       ),

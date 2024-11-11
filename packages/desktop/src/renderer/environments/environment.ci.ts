@@ -5,6 +5,6 @@ export const environment: AppEnvironment = {
   remoteConfig: 'dev',
   useFirebaseEmulator: true,
   ci: true,
-  websiteURL: 'http://localhost:3000/',
-  apiURL: 'http://localhost:5003/'
+  websiteURL: 'http://localhost:7002/',
+  apiURL: 'http://localhost:7001/'
 };

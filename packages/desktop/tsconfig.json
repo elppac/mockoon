@@ -13,12 +13,14 @@
     "target": "ES2022",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
-    "useDefineForClassFields": false
+    "useDefineForClassFields": false,
+    "sourceMap": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "sourceMap": true
   }
 }

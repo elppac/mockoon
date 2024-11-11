@@ -64,6 +64,7 @@ export const initMainWindow = (showSplash = true) => {
     // directly show the main window when running the tests
     show: false,
     webPreferences: {
+      webSecurity: false,
       nodeIntegration: false,
       contextIsolation: true,
       sandbox: true,

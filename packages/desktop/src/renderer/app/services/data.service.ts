@@ -180,7 +180,7 @@ export class DataService extends Logger {
     let testSelectedPort: number;
 
     if (activeEnvironment == null) {
-      testSelectedPort = 3000;
+      testSelectedPort = 7002;
     } else {
       testSelectedPort = activeEnvironment.port + 1;
     }

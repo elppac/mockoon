@@ -1555,6 +1555,7 @@ export class EnvironmentsService extends Logger {
    * Enable and disable a route
    */
   public toggleRoute(routeUuid?: string) {
+    console.log('env menu component toggleRoute');
     const activeEnvironment = this.store.getActiveEnvironment();
     const selectedRoute = activeEnvironment.routes.find(
       (route) => route.uuid === routeUuid
@@ -1585,7 +1586,7 @@ export class EnvironmentsService extends Logger {
       const environmentsStatus = this.store.get('environmentsStatus');
       const activeEnvironmentStatus =
         environmentsStatus[activeEnvironment.uuid];
-
+      console.log('env menu component', environmentsStatus, activeEnvironment);
       if (activeEnvironmentStatus.running) {
         this.store.update(
           updateEnvironmentStatusAction(

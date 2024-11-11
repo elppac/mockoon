@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h4 class="modal-title">Cloud Setting</h4>
+</div>
+<div class="modal-body">
+  <div [formGroup]="cloudForm">
+    <div class="input-group mb-3">
+      <label for="cloud-protocol" class="col-form-label pe-2">Web Protocol</label>
+      <select class="form-control col-4" id="cloud-protocol" formControlName="cloudWebProtocol">
+        <option value="http">HyperText Transfer Protocol (HTTP)</option>
+        <option value="https">HyperText Transfer Protocol Secure (HTTPS)</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <label for="cloud-socket-protocol" class="col-form-label pe-2">WebSocket Protocol</label>
+      <select class="form-control col-4" id="cloud-socket-protocol" formControlName="cloudWebSocketProtocol">
+        <option value="ws">WebSocket (WS)</option>
+        <option value="wss">WebSocket Secure (WSS)</option>
+      </select>
+    </div>
+    <div class="input-group mb-3">
+      <label for="cloud-host" class="col-form-label pe-2">Host</label>
+      <input type="text" class="form-control col-4" id="cloud-host" formControlName="cloudHost" />
+      <div class="input-group-text">
+        <app-svg icon="info" ngbTooltip="Example: example.com or 0.0.0.0 (IPv4)"></app-svg>
+      </div>
+    </div>
+    <div class="input-group mb-3">
+      <label for="cloud-port" class="col-form-label pe-2">Port</label>
+      <input type="text" class="form-control col-4" id="cloud-port" formControlName="cloudPort" />
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary modal-close" (click)="close(true)">
+    Save
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="close(false)">
+    Cancel
+  </button>
+</div>

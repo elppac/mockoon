@@ -56,7 +56,7 @@ export class DeployService extends Logger {
       switchMap(([user, token]) => {
         if (user?.plan !== Plans.FREE) {
           return this.httpClient.get<DeployInstance[]>(
-            `${Config.apiURL}deployments`,
+            `${Config.apiURL}dummy/deployments`,
             {
               headers: {
                 Authorization: `Bearer ${token}`
@@ -68,6 +68,7 @@ export class DeployService extends Logger {
         return of([]);
       }),
       tap((instances: DeployInstance[]) => {
+        console.log('deploy.service', instances);
         this.store.update(updateDeployInstancesAction([...instances]));
       }),
       catchError(() => EMPTY)
@@ -124,6 +125,7 @@ export class DeployService extends Logger {
         return EMPTY;
       }),
       tap((instance) => {
+        console.log('instance', instance);
         if (redeploy) {
           this.store.update(
             updateDeployInstancesAction([

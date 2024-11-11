@@ -9,6 +9,7 @@ import {
   switchMap,
   tap
 } from 'rxjs/operators';
+import { CLOUD_SYSTEM } from 'src/renderer/app/constants/system.constants';
 import { UserService } from 'src/renderer/app/services/user.service';
 import { Config } from 'src/renderer/config';
 import { environment } from 'src/renderer/environments/environment';
@@ -57,8 +58,11 @@ export class RemoteConfigService {
 
         return this.httpClient
           .post<RemoteConfigData>(
-            `${environment.apiURL}remoteconfig`,
-            { version: Config.appVersion },
+            `${environment.apiURL}dummy/remoteconfig`,
+            {
+              version: Config.appVersion,
+              json: JSON.parse(localStorage.getItem(CLOUD_SYSTEM) || 'null')
+            },
             {
               headers
             }

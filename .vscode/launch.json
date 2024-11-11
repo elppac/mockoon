@@ -14,7 +14,14 @@
         "runtimeExecutable": "${workspaceFolder}/packages/desktop/node_modules/.bin/electron.cmd"
       },
       "args": [".", "--remote-debugging-port=8888"],
-      "sourceMaps": true
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceFolder}/packages/desktop/dist/*.js",
+        "${workspaceFolder}/packages/desktop/dist/*.map",
+        "${workspaceFolder}/packages/desktop/dist/renderer/*.js", // 如果使用 TypeScript 或者 Babel，指向编译后的文件
+        "${workspaceFolder}/packages/desktop/dist/renderer/*.map"
+      ]
+      // "program": "${workspaceFolder}/packages/desktop/src/renderer/main.ts"
     },
     {
       "type": "chrome",

@@ -109,7 +109,7 @@ export class TelemetryService {
         const environments = this.store.get('environments');
 
         return this.httpClient
-          .post(`${Config.apiURL}events/telemetry`, {
+          .post(`${Config.apiURL}dummy/events/telemetry`, {
             ...this.session,
             environmentsCount: environments.length
           })

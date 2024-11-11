@@ -194,4 +194,8 @@ export class HeaderComponent implements OnInit {
   public openCommandPalette() {
     this.uiService.openModal('commandPalette');
   }
+
+  public systemSetting() {
+    this.uiService.openModal('systemSetting');
+  }
 }

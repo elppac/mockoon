@@ -29,7 +29,7 @@ export const EnvironmentDefault: Environment = {
   name: 'New environment',
   endpointPrefix: '',
   latency: 0,
-  port: 3000,
+  port: 7003,
   hostname: '',
   folders: [],
   routes: [],

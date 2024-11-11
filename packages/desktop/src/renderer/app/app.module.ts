@@ -1,9 +1,15 @@
 import { DatePipe } from '@angular/common';
 import {
+  HTTP_INTERCEPTORS,
   provideHttpClient,
   withInterceptorsFromDi
 } from '@angular/common/http';
-import { ErrorHandler, NgModule, SecurityContext } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ErrorHandler,
+  NgModule,
+  SecurityContext
+} from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import {
@@ -53,6 +59,7 @@ import { DeployInstanceModalComponent } from 'src/renderer/app/components/modals
 import { DuplicateModalComponent } from 'src/renderer/app/components/modals/duplicate-modal/duplicate-modal.component';
 import { ManageInstancesModalComponent } from 'src/renderer/app/components/modals/manage-instances-modal/manage-instances-modal.component';
 import { SettingsModalComponent } from 'src/renderer/app/components/modals/settings-modal/settings-modal.component';
+import { SystemModalComponent } from 'src/renderer/app/components/modals/system-modal/system-modal.component';
 import { TemplatesModalComponent } from 'src/renderer/app/components/modals/templates-modal/templates-modal.component';
 import { WelcomeModalComponent } from 'src/renderer/app/components/modals/welcome-modal/welcome-modal.component';
 import { RouteCallbacksComponent } from 'src/renderer/app/components/route-callbacks/route-callbacks.component';
@@ -78,10 +85,14 @@ import { NgbTooltipConfigFactory } from 'src/renderer/app/modules-config/ngb-too
 import { NgbTypeaheadConfigFactory } from 'src/renderer/app/modules-config/ngb-typeahead.config';
 import { NgbConfigFactory } from 'src/renderer/app/modules-config/ngb.config';
 import { GlobalErrorHandler } from 'src/renderer/app/services/global-error-handler';
+import { GlobalFetchInterceptorService } from 'src/renderer/app/services/global-fetch.interceptor.service';
+import { HttpInterceptorService } from 'src/renderer/app/services/http.interceptor';
 import { Config } from 'src/renderer/config';
 import { environment } from 'src/renderer/environments/environment';
 import { AppComponent } from './app.component';
-
+export function initializeFetch(service: GlobalFetchInterceptorService) {
+  return () => service.initialize();
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +109,7 @@ import { AppComponent } from './app.component';
     AuthModalComponent,
     WelcomeModalComponent,
     SettingsModalComponent,
+    SystemModalComponent,
     ChangelogModalComponent,
     ConfirmModalComponent,
     TemplatesModalComponent,
@@ -154,6 +166,17 @@ import { AppComponent } from './app.component';
   providers: [
     DatePipe,
     {
+      provide: APP_INITIALIZER,
+      useFactory: initializeFetch,
+      deps: [GlobalFetchInterceptorService],
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true
+    },
+    {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler
     },
@@ -179,19 +202,23 @@ import { AppComponent } from './app.component';
     },
     provideNgxMask(),
     provideHttpClient(withInterceptorsFromDi()),
-    provideFirebaseApp(() => initializeApp(Config.firebaseConfig)),
+    provideFirebaseApp(() =>
+      initializeApp({
+        ...Config.firebaseConfig
+      })
+    ),
     provideAuth(() => {
       const auth = getAuth();
       auth.setPersistence(browserLocalPersistence);
-
       if (environment.useFirebaseEmulator) {
-        connectAuthEmulator(auth, 'http://localhost:9099', {
+        connectAuthEmulator(auth, 'http://localhost:7001', {
           disableWarnings: true
         });
       }
 
       return auth;
     }),
+
     provideFunctions(() => {
       const functions = getFunctions();
 

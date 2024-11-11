@@ -23,7 +23,7 @@ export const SharedConfig = (options: {
     websiteURL: options.websiteURL,
     apiURL: options.apiURL,
     githubBinaryURL: 'https://github.com/mockoon/mockoon/releases/download/',
-    latestReleaseDataURL: `${options.apiURL}releases/desktop/stable.json`,
+    latestReleaseDataURL: `${options.apiURL}dummy/releases/desktop/stable.json`,
     changelogMarkdownURL: `${options.websiteURL}desktop-changelogs-markdown/`,
     releasePublicURL: `${options.websiteURL}releases/`,
     docs: {
@@ -39,9 +39,9 @@ export const SharedConfig = (options: {
         docsURL + 'mockoon-cloud/data-synchronization-team-collaboration/'
     },
     // should not be used directly. Instead use the flow methods in the user service
-    loginURL: `${options.websiteURL}login/`,
+    loginURL: `${options.websiteURL}dummy/login/`,
     // should not be used directly. Instead use the flow methods in the user service
-    signupURL: `${options.websiteURL}signup/`,
+    signupURL: `${options.websiteURL}dummy/signup/`,
     accountURL: `${options.websiteURL}account/subscription/`,
     cloudPlansURL: `${options.websiteURL}cloud/`,
     maxPromptLength: 500,
@@ -51,13 +51,21 @@ export const SharedConfig = (options: {
     storageSaveDelay: 1000, // ms
     fileReWatchDelay: 3000, // ms
     firebaseConfig: {
-      apiKey: 'AIzaSyCIkzTtimLebXjf-gfCQ6iwCVFsYRhCRvs',
-      authDomain: 'mockoon-ba3e2.firebaseapp.com',
-      databaseURL: 'https://mockoon-ba3e2.firebaseio.com',
-      projectId: 'mockoon-ba3e2',
-      storageBucket: 'mockoon-ba3e2.appspot.com',
-      messagingSenderId: '902702764744',
-      appId: '1:902702764744:web:599e8dc8d6a1ef6542cbfd'
+      apiKey: 'MATRIX-DUMMY',
+      authDomain: 'matrix.gram-tech.com',
+      projectId: 'matrix-dummy',
+      storageBucket: '',
+      messagingSenderId: '',
+      appId: 'MATRIX-DUMMY-APP'
     }
+    // firebaseConfig: {
+    //   apiKey: 'AIzaSyCIkzTtimLebXjf-gfCQ6iwCVFsYRhCRvs',
+    //   authDomain: 'mockoon-ba3e2.firebaseapp.com',
+    //   databaseURL: 'https://mockoon-ba3e2.firebaseio.com',
+    //   projectId: 'mockoon-ba3e2',
+    //   storageBucket: 'mockoon-ba3e2.appspot.com',
+    //   messagingSenderId: '902702764744',
+    //   appId: '1:902702764744:web:599e8dc8d6a1ef6542cbfd'
+    // }
   };
 };
