@@ -22,7 +22,7 @@ export class ImportExportService extends Logger {
   }
 
   /**
-   * Import an OpenAPI (v2/v3) file in Mockoon's format.
+   * Import an OpenAPI (v2/v3) file in Dummy's format.
    * Append imported envs to the env array.
    */
   public importOpenAPIFile() {

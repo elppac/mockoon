@@ -374,7 +374,7 @@ export class EnvironmentsService extends Logger {
       return this.uiService
         .showConfirmDialog({
           title: 'External changes detected',
-          text: 'The following environments were modified outside Mockoon:',
+          text: 'The following environments were modified outside Dummy:',
           sub: 'You can disable file monitoring in the application settings (Ctrl + Comma)',
           confirmButtonText: 'Reload all',
           cancelButtonText: 'Ignore',
@@ -1555,7 +1555,6 @@ export class EnvironmentsService extends Logger {
    * Enable and disable a route
    */
   public toggleRoute(routeUuid?: string) {
-    console.log('env menu component toggleRoute');
     const activeEnvironment = this.store.getActiveEnvironment();
     const selectedRoute = activeEnvironment.routes.find(
       (route) => route.uuid === routeUuid
@@ -1586,7 +1585,6 @@ export class EnvironmentsService extends Logger {
       const environmentsStatus = this.store.get('environmentsStatus');
       const activeEnvironmentStatus =
         environmentsStatus[activeEnvironment.uuid];
-      console.log('env menu component', environmentsStatus, activeEnvironment);
       if (activeEnvironmentStatus.running) {
         this.store.update(
           updateEnvironmentStatusAction(
@@ -2254,8 +2252,8 @@ export class EnvironmentsService extends Logger {
       return this.uiService
         .showConfirmDialog({
           title: 'Confirm opening',
-          text: 'This content does not seem to be a valid Mockoon environment. Open it anyway?',
-          sub: 'Mockoon will attempt to migrate and repair the content, which may be altered and overwritten.',
+          text: 'This content does not seem to be a valid Dummy environment. Open it anyway?',
+          sub: 'Dummy will attempt to migrate and repair the content, which may be altered and overwritten.',
           subIcon: 'warning',
           subIconClass: 'text-warning'
         })

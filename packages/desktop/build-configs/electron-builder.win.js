@@ -8,21 +8,21 @@ const config = Object.assign({}, commonConfig, {
   forceCodeSigning: true,
   win: {
     target: [{ target: 'nsis' }, { target: 'portable' }],
-    publisherName: '1kB SARL-S',
+    publisherName: 'Matrix',
     azureSignOptions: {
       endpoint: 'https://eus.codesigning.azure.net',
       // respect casing
-      certificateProfileName: 'Mockoon',
-      codeSigningAccountName: 'mockoon',
+      certificateProfileName: 'Matrix',
+      codeSigningAccountName: 'matrix',
       TimestampRfc3161: 'http://timestamp.acs.microsoft.com',
       TimestampDigest: 'SHA256'
     }
   },
   nsis: {
-    artifactName: 'mockoon.setup.${version}.${ext}'
+    artifactName: 'matrix.dummy.setup.${version}.${ext}'
   },
   portable: {
-    artifactName: 'mockoon.portable.${version}.${ext}'
+    artifactName: 'matrix.dummy.portable.${version}.${ext}'
   }
 });
 

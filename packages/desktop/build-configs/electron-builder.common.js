@@ -3,9 +3,9 @@
  * @see https://www.electron.build/configuration/configuration
  */
 const config = {
-  appId: 'com.mockoon.app',
-  productName: 'Mockoon',
-  extraMetadata: { name: 'mockoon' },
+  appId: 'com.creatormatrix.dummy',
+  productName: 'Dummy',
+  extraMetadata: { name: 'dummy' },
   directories: {
     output: 'packages',
     buildResources: 'build-res'

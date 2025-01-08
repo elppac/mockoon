@@ -5,6 +5,6 @@ export const environment: AppEnvironment = {
   remoteConfig: 'prod',
   useFirebaseEmulator: false,
   ci: false,
-  websiteURL: 'https://mockoon.com/',
-  apiURL: 'https://api.mockoon.com/'
+  websiteURL: 'http://console.gram-tech.com/manage/',
+  apiURL: 'http://console.gram-tech.com/'
 };

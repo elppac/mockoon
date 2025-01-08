@@ -4,34 +4,22 @@
   </div>
   <div class="modal-body" [formGroup]="settingsForm">
     <div>
-      <app-title-separator
-        heading="User interface"
-        [isFirst]="true"
-        icon="web_asset"
-      ></app-title-separator>
+      <app-title-separator heading="User interface" [isFirst]="true" icon="web_asset"></app-title-separator>
 
       <div class="ps-4">
         <div class="mb-3">
           <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="settings-truncate-route-name"
-              formControlName="truncateRouteName"
-            />
-            <label class="form-check-label" for="settings-truncate-route-name"
-              >Truncate long paths in lists (environments, routes, logs,
-              etc.)</label
-            >
+            <input type="checkbox" class="form-check-input" id="settings-truncate-route-name"
+              formControlName="truncateRouteName" />
+            <label class="form-check-label" for="settings-truncate-route-name">Truncate long paths in lists
+              (environments, routes, logs,
+              etc.)</label>
           </div>
         </div>
       </div>
     </div>
 
-    <app-title-separator
-      heading="Environment variables"
-      icon="list"
-    ></app-title-separator>
+    <app-title-separator heading="Environment variables" icon="list"></app-title-separator>
 
     <div class="ps-4">
       <div class="mb-3">
@@ -39,12 +27,7 @@
           <label for="settings-env-vars-prefix" class="col-form-label pe-2">
             Environment variables prefix
           </label>
-          <input
-            type="text"
-            class="form-control col-1"
-            id="settings-env-vars-prefix"
-            formControlName="envVarsPrefix"
-          />
+          <input type="text" class="form-control col-1" id="settings-env-vars-prefix" formControlName="envVarsPrefix" />
           <div class="input-group-text">
             <app-svg icon="info" [ngbTooltip]="envVarsPrefixTooltip"></app-svg>
             <ng-template #envVarsPrefixTooltip>
@@ -65,30 +48,18 @@
       </div>
     </div>
 
-    <app-title-separator
-      heading="Environment logs"
-      icon="history"
-    ></app-title-separator>
+    <app-title-separator heading="Environment logs" icon="history"></app-title-separator>
 
     <div class="ps-4">
       <div class="mb-3">
         <div class="input-group align-items-center">
           <div class="form-check mb-0">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="settings-log-transactions"
-              formControlName="logTransactions"
-            />
-            <label class="form-check-label" for="settings-log-transactions"
-              >Log the full transactions</label
-            >
+            <input type="checkbox" class="form-check-input" id="settings-log-transactions"
+              formControlName="logTransactions" />
+            <label class="form-check-label" for="settings-log-transactions">Log the full transactions</label>
           </div>
           <div class="input-group-text">
-            <app-svg
-              icon="info"
-              [ngbTooltip]="logTransactionsTooltip"
-            ></app-svg>
+            <app-svg icon="info" [ngbTooltip]="logTransactionsTooltip"></app-svg>
             <ng-template #logTransactionsTooltip>
               <div>
                 Logs the full transaction (for requests, responses and
@@ -107,35 +78,21 @@
           <label for="settings-log-max-count" class="col-form-label pe-2">
             Maximum log entries displayed in the "Logs" tab (per environment)
           </label>
-          <input
-            type="number"
-            class="form-control col-1"
-            id="settings-log-max-count"
-            [appInputNumber]="{ min: 1, max: Infinity, canBeEmpty: false }"
-            formControlName="maxLogsPerEnvironment"
-          />
+          <input type="number" class="form-control col-1" id="settings-log-max-count"
+            [appInputNumber]="{ min: 1, max: Infinity, canBeEmpty: false }" formControlName="maxLogsPerEnvironment" />
         </div>
       </div>
     </div>
 
-    <app-title-separator
-      heading="Faker.js"
-      subheading="Templating system supports Faker.js"
-      icon="code"
-      docLink="templating"
-    ></app-title-separator>
+    <app-title-separator heading="Faker.js" subheading="Templating system supports Faker.js" icon="code"
+      docLink="templating"></app-title-separator>
 
     <div class="ps-4">
       <div class="mb-3">
         <div class="input-group">
           <label class="col-form-label pe-2"> Locale </label>
-          <app-custom-select
-            class="col-3"
-            formControlName="fakerLocale"
-            [enableCustomInput]="false"
-            [items]="fakerLocales"
-            dropdownId="settings-faker-locale"
-          ></app-custom-select>
+          <app-custom-select class="col-3" formControlName="fakerLocale" [enableCustomInput]="false"
+            [items]="fakerLocales" dropdownId="settings-faker-locale"></app-custom-select>
           <div class="input-group-text">
             <app-svg icon="info" [ngbTooltip]="fakerLocaleTooltip"></app-svg>
             <ng-template #fakerLocaleTooltip>
@@ -157,14 +114,9 @@
             Seed
           </label>
           <!-- input number is important for the seed -->
-          <input
-            type="number"
-            class="form-control col-4"
-            id="settings-faker-seed"
-            placeholder="Number or empty for no seed"
-            [appInputNumber]="{ min: 0, max: Infinity, canBeEmpty: true }"
-            formControlName="fakerSeed"
-          />
+          <input type="number" class="form-control col-4" id="settings-faker-seed"
+            placeholder="Number or empty for no seed" [appInputNumber]="{ min: 0, max: Infinity, canBeEmpty: true }"
+            formControlName="fakerSeed" />
           <div class="input-group-text">
             <app-svg icon="info" [ngbTooltip]="fakerSeedTooltip"></app-svg>
             <ng-template #fakerSeedTooltip>
@@ -181,25 +133,15 @@
       </div>
     </div>
 
-    <app-title-separator
-      heading="Environments options"
-      icon="misc"
-    ></app-title-separator>
+    <app-title-separator heading="Environments options" icon="misc"></app-title-separator>
 
     <div class="ps-4">
       <div class="mb-3">
         <div class="input-group">
           <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="settings-start-environments-on-load"
-              formControlName="startEnvironmentsOnLoad"
-            />
-            <label
-              class="form-check-label"
-              for="settings-start-environments-on-load"
-            >
+            <input type="checkbox" class="form-check-input" id="settings-start-environments-on-load"
+              formControlName="startEnvironmentsOnLoad" />
+            <label class="form-check-label" for="settings-start-environments-on-load">
               Start all environments on application startup
             </label>
           </div>
@@ -211,16 +153,9 @@
       <div class="mb-3">
         <div class="input-group align-items-center">
           <div class="form-check mb-0">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="settings-enable-random-latency"
-              formControlName="enableRandomLatency"
-            />
-            <label
-              class="form-check-label"
-              for="settings-enable-random-latency"
-            >
+            <input type="checkbox" class="form-check-input" id="settings-enable-random-latency"
+              formControlName="enableRandomLatency" />
+            <label class="form-check-label" for="settings-enable-random-latency">
               Randomize latencies
             </label>
           </div>
@@ -246,18 +181,11 @@
       <div class="mb-3">
         <div class="input-group file-watcher-input-group">
           <label class="col-form-label pe-2"> Environment files watcher </label>
-          <app-custom-select
-            class="col-2"
-            formControlName="fileWatcherEnabled"
-            [enableCustomInput]="false"
-            [items]="fileWatcherOptions"
-            dropdownId="settings-storage-file-watcher"
-          ></app-custom-select>
+          <app-custom-select class="col-2" formControlName="fileWatcherEnabled" [enableCustomInput]="false"
+            [items]="fileWatcherOptions" dropdownId="settings-storage-file-watcher"></app-custom-select>
           <div class="input-group-text">
-            <app-svg
-              icon="info"
-              ngbTooltip="Mockoon will watch environment files for external changes and prompt (or not) for reload"
-            ></app-svg>
+            <app-svg icon="info"
+              ngbTooltip="Dummy will watch environment files for external changes and prompt (or not) for reload"></app-svg>
           </div>
         </div>
       </div>
@@ -266,45 +194,28 @@
     <div class="ps-4">
       <div class="mb-3">
         <div class="form-check">
-          <input
-            type="checkbox"
-            class="form-check-input"
-            id="settings-storage-pretty-print"
-            formControlName="storagePrettyPrint"
-          />
+          <input type="checkbox" class="form-check-input" id="settings-storage-pretty-print"
+            formControlName="storagePrettyPrint" />
           <label class="form-check-label" for="settings-storage-pretty-print">
-            Pretty print JSON storage files (settings and environments)</label
-          >
+            Pretty print JSON storage files (settings and environments)</label>
         </div>
       </div>
     </div>
 
-    <app-title-separator
-      heading="Telemetry"
-      icon="show_chart"
-    ></app-title-separator>
+    <app-title-separator heading="Telemetry" icon="show_chart"></app-title-separator>
 
     <div class="ps-4">
       <div class="mb-3">
         <div class="input-group align-items-center">
           <div class="form-check mb-0">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="settings-enable-telemetry"
-              formControlName="enableTelemetry"
-            />
-            <label class="form-check-label" for="settings-enable-telemetry"
-              >Enable telemetry
+            <input type="checkbox" class="form-check-input" id="settings-enable-telemetry"
+              formControlName="enableTelemetry" />
+            <label class="form-check-label" for="settings-enable-telemetry">Enable telemetry
             </label>
           </div>
           <div class="input-group-text">
-            <app-svg
-              icon="info"
-              class="text-primary cursor-pointer"
-              [ngbTooltip]="telemetryTooltip"
-              (click)="openWikiLink('faq', $event)"
-            ></app-svg>
+            <app-svg icon="info" class="text-primary cursor-pointer" [ngbTooltip]="telemetryTooltip"
+              (click)="openWikiLink('faq', $event)"></app-svg>
             <ng-template #telemetryTooltip>
               <div>
                 Our custom telemetry system is collecting a minimal amount of
@@ -321,11 +232,7 @@
   </div>
 
   <div class="modal-footer">
-    <button
-      type="button"
-      class="btn btn-secondary modal-close"
-      (click)="close()"
-    >
+    <button type="button" class="btn btn-secondary modal-close" (click)="close()">
       Close
     </button>
   </div>

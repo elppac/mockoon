@@ -25,7 +25,7 @@ export class TourService {
       id: 'tour-environments-menu',
       title: 'Environments list',
       content:
-        'This is the list of your <strong>environments or mock APIs</strong>. Each local environment is a separate file on your computer and runs on a different localhost port (e.g. <code>http://localhost:3000</code>).<br/>You can also create <strong>cloud environments</strong> by subscribing to Mockoon Cloud.',
+        'This is the list of your <strong>environments or mock APIs</strong>. Each local environment is a separate file on your computer and runs on a different localhost port (e.g. <code>http://localhost:3000</code>).<br/>You can also create <strong>cloud environments</strong> by subscribing to Dummy Cloud.',
       placement: 'right',
       links: [
         {
@@ -55,7 +55,7 @@ export class TourService {
       id: 'tour-route-add',
       title: 'Adding more routes',
       content:
-        'You can always add more routes using this menu. Mockoon supports a wide range of <strong>HTTP routes</strong> and also provides <strong>fully automated CRUD routes</strong>.',
+        'You can always add more routes using this menu. Dummy supports a wide range of <strong>HTTP routes</strong> and also provides <strong>fully automated CRUD routes</strong>.',
       placement: 'bottom-left',
       links: [
         {
@@ -141,7 +141,7 @@ export class TourService {
       id: 'tour-environment-logs',
       title: 'View your environment logs',
       content:
-        'You can view your environment logs here. They will show you the <strong>requests</strong> made to your environment and how Mockoon responded. You can also <strong>automatically create endpoints</strong> from your logs.',
+        'You can view your environment logs here. They will show you the <strong>requests</strong> made to your environment and how Dummy responded. You can also <strong>automatically create endpoints</strong> from your logs.',
       placement: 'bottom',
       links: [
         {
@@ -154,7 +154,7 @@ export class TourService {
       id: 'tour-environment-proxy',
       title: 'Proxy to an external API',
       content:
-        'Using the proxy mode, you can <strong>partially mock</strong> your API by forwarding the calls to endpoints not declared in Mockoon.',
+        'Using the proxy mode, you can <strong>partially mock</strong> your API by forwarding the calls to endpoints not declared in Dummy.',
       placement: 'bottom',
       links: [
         {

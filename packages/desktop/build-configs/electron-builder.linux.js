@@ -26,9 +26,9 @@ const config = Object.assign({}, commonConfig, {
     ],
     category: 'Development',
     icon: 'build-res',
-    artifactName: 'mockoon-${version}.${arch}.${ext}',
+    artifactName: 'matrix.dummy-${version}.${arch}.${ext}',
     desktop: {
-      Name: 'Mockoon',
+      Name: 'Dummy',
       Type: 'Application',
       Categories: 'Development'
     }

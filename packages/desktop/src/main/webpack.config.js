@@ -42,13 +42,13 @@ module.exports = (env, argv) => {
         IS_TESTING: env.isTesting ? true : false,
         WEBSITE_URL: JSON.stringify(
           argv.mode === 'development'
-            ? 'http://localhost:7002/'
-            : 'https://mockoon.com/'
+            ? 'http://console-matrix.gram-tech.com/'
+            : 'http://console.gram-tech.com/manage/'
         ),
         API_URL: JSON.stringify(
           argv.mode === 'development'
-            ? 'http://localhost:7001/'
-            : 'https://api.mockoon.com/'
+            ? 'http://console.gram-tech.com/'
+            : 'http://console.gram-tech.com/'
         )
       })
     ]

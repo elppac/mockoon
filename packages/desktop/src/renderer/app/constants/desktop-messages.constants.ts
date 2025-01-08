@@ -208,20 +208,19 @@ export const DesktopMessages: {
     showToast: false
   }),
   ENVIRONMENT_INVALID: () => ({
-    message: 'This content does not seem to be a valid Mockoon environment',
+    message: 'This content does not seem to be a valid Dummy environment',
     log: true,
-    loggerMessage:
-      'This content does not seem to be a valid Mockoon environment',
+    loggerMessage: 'This content does not seem to be a valid Dummy environment',
     showToast: true,
     toastType: 'warning'
   }),
   ENVIRONMENT_MORE_RECENT_VERSION: (messageParams) => ({
     message: `Environment "${
       messageParams.environmentName || messageParams.environmentUUID
-    }" was created with a more recent version of Mockoon. Please upgrade.`,
+    }" was created with a more recent version of Dummy. Please upgrade.`,
     log: true,
     loggerMessage:
-      'Environment was created with a more recent version of Mockoon. Please upgrade.',
+      'Environment was created with a more recent version of Dummy. Please upgrade.',
     logPayload: messageParams,
     showToast: true,
     toastType: 'warning'

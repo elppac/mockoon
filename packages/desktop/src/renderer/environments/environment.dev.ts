@@ -5,6 +5,6 @@ export const environment: AppEnvironment = {
   remoteConfig: 'dev',
   useFirebaseEmulator: true,
   ci: false,
-  websiteURL: 'http://localhost:7002/',
-  apiURL: 'http://localhost:7001/'
+  websiteURL: 'http://console-matrix.gram-tech.com/',
+  apiURL: 'http://console.gram-tech.com/'
 };

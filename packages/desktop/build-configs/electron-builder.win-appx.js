@@ -7,15 +7,15 @@ const commonConfig = require('./electron-builder.common');
 const config = Object.assign({}, commonConfig, {
   win: {
     target: [{ target: 'appx' }],
-    publisherName: '1kB SARL-S'
+    publisherName: 'Matrix'
   },
   appx: {
     publisher: 'CN=F7BC8E8D-E7FB-4CF2-87B7-66105AC3B61D',
-    publisherDisplayName: '1kB SARL-S',
-    identityName: '1kB.mockoon',
-    applicationId: 'mockoon',
+    publisherDisplayName: 'Matrix',
+    identityName: 'matrix.dummy',
+    applicationId: 'dummy',
     backgroundColor: '#ffffff',
-    artifactName: 'mockoon.${version}.${ext}'
+    artifactName: 'matrix.dummy.${version}.${ext}'
   }
 });
 

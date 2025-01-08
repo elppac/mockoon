@@ -7,21 +7,21 @@ const commonConfig = require('./electron-builder.common');
 const config = Object.assign({}, commonConfig, {
   mac: {
     target: [
-      {
-        target: 'dmg',
-        arch: ['universal']
-      },
+      // {
+      //   target: 'dmg',
+      //   arch: ['universal']
+      // },
       {
         target: 'dmg',
         arch: ['x64']
-      },
-      {
-        target: 'dmg',
-        arch: ['arm64']
       }
+      // {
+      //   target: 'dmg',
+      //   arch: ['arm64']
+      // }
     ],
     type: 'distribution',
-    artifactName: 'mockoon.setup.${version}.${arch}.${ext}',
+    artifactName: 'matrix.dummy.setup.${version}.${arch}.${ext}',
     hardenedRuntime: true,
     gatekeeperAssess: false,
     entitlements: 'build-res/entitlements.mac.plist',

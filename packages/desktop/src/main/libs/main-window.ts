@@ -53,7 +53,7 @@ export const initMainWindow = (showSplash = true) => {
     minimizable: true,
     width: mainWindowState.width,
     height: mainWindowState.height,
-    title: 'Mockoon',
+    title: 'Dummy',
     backgroundColor: '#252830',
     icon: pathJoin(
       __dirname,

@@ -120,7 +120,7 @@ export class AppComponent extends Logger implements OnInit {
     this.activeEnvironment$ = this.store.selectActiveEnvironment().pipe(
       tap((activeEnvironment) => {
         this.title.setTitle(
-          `${environment.production ? '' : ' [DEV]'}Mockoon${
+          `${environment.production ? '' : ' [DEV]'} Dummy${
             activeEnvironment ? ' - ' + activeEnvironment.name : ''
           }`
         );

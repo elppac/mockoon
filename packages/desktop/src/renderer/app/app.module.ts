@@ -211,7 +211,7 @@ export function initializeFetch(service: GlobalFetchInterceptorService) {
       const auth = getAuth();
       auth.setPersistence(browserLocalPersistence);
       if (environment.useFirebaseEmulator) {
-        connectAuthEmulator(auth, 'http://localhost:7001', {
+        connectAuthEmulator(auth, 'http://console.gram-tech.com/', {
           disableWarnings: true
         });
       }
